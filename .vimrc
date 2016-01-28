@@ -267,7 +267,6 @@ cnoremap <C-e> <End>
 "=============================================
 "========== Plugin setting NERDTree ==========
 "=============================================
-autocmd vimenter * NERDTree
 let NERDChristmasTree=0
 let NERDTreeWinSize=35
 let NERDTreeChDirMode=2
@@ -275,8 +274,9 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos="left"
 " Automatically open a NERDTree if no files where specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open a NERDTree
